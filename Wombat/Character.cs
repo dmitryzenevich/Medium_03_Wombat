@@ -9,7 +9,7 @@ namespace Wombat
         public int Health
         {
             get => _health;
-            private protected set => _health = value;
+            protected set => _health = value;
         }
 
         protected Character(int health) => _health = health;
@@ -17,9 +17,9 @@ namespace Wombat
         public void TakeDamage(int damage)
         {
             Health -= CalculateDamage(damage);
-            if(Health <= 0){
+
+            if (Health <= 0)
                 Console.WriteLine("I died");
-            }
         }
 
         protected abstract int CalculateDamage(int damage);
